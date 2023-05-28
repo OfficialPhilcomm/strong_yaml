@@ -82,7 +82,7 @@ module StrongYAML
             raise StrongYAML::ConfigSchema::SchemaError, "#{path.map(&:to_s).join(".")} is of type #{value.class}, but should be Integer"
           end
         when StrongYAML::ConfigBoolean
-          if value.nil? || !!foo == foo
+          if value.nil? || !!value == value
             value
           else
             raise StrongYAML::ConfigSchema::SchemaError, "#{path.map(&:to_s).join(".")} is of type #{value.class}, but should be Boolean"
