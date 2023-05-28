@@ -1,6 +1,7 @@
 require_relative "config_group"
 require_relative "config_string"
 require_relative "config_integer"
+require_relative "config_boolean"
 require_relative "config_list"
 
 module StrongYAML
@@ -26,6 +27,10 @@ module StrongYAML
 
     def integer(name, **args)
       @elements << StrongYAML::ConfigInteger.new(name, **args)
+    end
+
+    def boolean(name, **args)
+      @elements << StrongYAML::ConfigBoolean.new(name, **args)
     end
 
     def list(name, **args)
